@@ -38,14 +38,23 @@ const Footer = () => {
 
         {/* Col 1 — Brand */}
         <div className="flex flex-col gap-5">
-          <Link to="/" className="flex flex-col leading-none w-fit">
-            <span className="text-2xl font-bold text-text-inverse tracking-tight">
-              <span className="text-primary-light">Fundi</span>Connect
-            </span>
-            <span className="text-[10px] text-text-inverse/40 uppercase tracking-widest font-normal mt-0.5">
-              Trusted Service Providers
-            </span>
-          </Link>
+         
+        <div className="grid md:grid-cols-2 gap-2">
+  <Link to="/" className="flex flex-col leading-none">
+    <div className="flex items-center gap-2">
+      <img src="assets/logo.png" alt="fundi connect logo" className='w-6 h-6' />
+      <div>
+        <span className="text-xl font-bold text-text-inverse tracking-tight">
+          <span className="text-primary-light">Fundi</span>Connect
+        </span>
+        <div className="text-[10px] text-text-inverse/50 uppercase tracking-widest font-normal">
+          Trusted Service Providers
+        </div>
+      </div>
+    </div>
+  </Link>
+</div>
+        
           <p className="text-sm leading-relaxed text-text-inverse/55 max-w-[220px]">
             Connecting Kenyan homes and businesses with skilled, vetted fundis — fast, safe, and reliable.
           </p>

@@ -35,14 +35,21 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
           {/* Logo */}
-          <Link to="/" className="flex flex-col leading-none">
-            <span className="text-xl font-bold text-text-inverse tracking-tight">
-              <span className="text-primary-light">Fundi</span>Connect
-            </span>
-            <span className="text-[10px] text-text-inverse/50 uppercase tracking-widest font-normal">
-              Trusted Service Providers
-            </span>
-          </Link>
+          <div className="grid md:grid-cols-2 gap-2">
+  <Link to="/" className="flex flex-col leading-none">
+    <div className="flex items-center gap-2">
+      <img src="assets/logo.png" alt="fundi connect logo" className='w-6 h-6' />
+      <div>
+        <span className="text-xl font-bold text-text-inverse tracking-tight">
+          <span className="text-primary-light">Fundi</span>Connect
+        </span>
+        <div className="text-[10px] text-text-inverse/50 uppercase tracking-widest font-normal">
+          Trusted Service Providers
+        </div>
+      </div>
+    </div>
+  </Link>
+</div>
 
           {/* Desktop Links */}
           <ul className="hidden md:flex items-center gap-1">
