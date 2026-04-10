@@ -1,13 +1,12 @@
 import { useState } from 'react'
 
-const Contact = () => {
+const Signup = () => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
-    message: ''
+    password: ''
   });
 
-  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,22 +14,13 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
   };
 
   return (
-    <section id="contact-form" className="min-h-screen mt-4 bg-background flex items-center justify-center px-4 py-16">
+    <section id="signup" className="min-h-screen mt-4 bg-background flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-lg bg-white rounded-2xl shadow-teal p-8 border border-surface-border">
 
-        <h2 className="text-2xl font-semibold text-text-primary mb-1">Contact Us</h2>
-        <p className="text-text-secondary text-sm mb-6">We'll get back to you as soon as possible.</p>
-
-        {submitted ? (
-          <div className="bg-accent-success/10 border border-accent-success text-accent-success rounded-xl px-4 py-3 text-sm">
-            Message sent! We'll be in touch soon.
-          </div>
-        ) : (
+        <h2 className="text-2xl font-semibold text-text-primary mb-1">Sign Up</h2>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
 
             <div className="flex flex-col gap-1">
@@ -66,33 +56,36 @@ const Contact = () => {
             </div>
 
             <div className="flex flex-col gap-1">
-              <label className="text-sm font-medium text-text-primary" htmlFor="message">
-                Message
+              <label className="text-sm font-medium text-text-primary" htmlFor="email">
+                Password
               </label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Write your message here..."
-                value={formData.message}
+              <input
+                id="password"
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+                value={formData.password}
                 onChange={handleChange}
                 required
-                rows={5}
-                className="w-full px-4 py-2.5 rounded-xl border border-surface-border text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm resize-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-surface-border text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
               />
             </div>
+
+
+    
 
             <button
               type="submit"
               className="w-full bg-primary hover:bg-primary-dark text-white font-medium py-2.5 rounded-xl shadow-teal transition-colors duration-200 text-sm"
             >
-              Send Message
+              Sign Up
             </button>
 
           </form>
-        )}
+        
       </div>
     </section>
   );
 };
 
-export default Contact;
+export default Signup;
