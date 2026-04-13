@@ -45,7 +45,7 @@ export function ProfileDropdown({ user, items, onLogout, fundiOnlineToggle, ROLE
                 {user.initials}
               </div>
               <div className="min-w-0">
-                <p className="text-sm font-semibold text-text-inverse truncate">{user.name}</p>
+                <p className="text-sm font-semibold text-text-inverse truncate">{user.full_name}</p>
                 <span className={`inline-block text-[10px] font-bold uppercase tracking-wide border px-2 py-0.5 rounded-full mt-0.5 ${ROLE_BADGE[user.role]}`}>
                   {user.role}
                 </span>
